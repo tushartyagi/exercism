@@ -4,21 +4,13 @@ using System.Linq;
 
 public class SumOfMultiples
 {
-    public static int To(int[] numbers, int to)
+    public static int To(int[] numbers, int upto)
     {
-        ICollection<int> multiples = new HashSet<int>();
+        HashSet<int> multiples = new HashSet<int>();
         foreach (var number in numbers)
         {
-            int init = 1;
-            var multiple = 0;
-            while (true) 
+            foreach (var multiple in GetMultiples(number, upto))
             {
-                multiple = number * init++;
-                if (multiple >= to) 
-                {   
-                    init = 1;
-                    break;
-                }
                 multiples.Add(multiple);
             }
         }
@@ -26,13 +18,15 @@ public class SumOfMultiples
         return multiples.Sum();
     }
 
-    private static IEnumerable<int> GetMultiples(int number, int to)
+    private static IEnumerable<int> GetMultiples(int number, int upto)
     {
         int init = 1;
         int multiple;
-        do {
+        while (true)
+        {
             multiple = number * init++;
+            if (multiple >= upto) break;
             yield return multiple;
-        } while (multiple < to);
+        }
     }
 }
