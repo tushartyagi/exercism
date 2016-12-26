@@ -8,7 +8,11 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             
-            
+            var account = new BankAccount();
+            account.Open();
+            account.Close();         
+
+            account.UpdateBalance(20);   
         }
     }
 }
