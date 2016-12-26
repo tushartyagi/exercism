@@ -28,6 +28,9 @@ public class DNA
     {
         int count;
 
+        // Since the Dictionary is already filled up and contains all
+        // the correct keys, this is a simple way to invalidate 
+        // incorrect keys.
         if (!NucleotideCounts.ContainsKey(nucleotide))
         {
             throw new InvalidNucleotideException();
