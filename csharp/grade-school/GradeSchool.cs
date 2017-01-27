@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class Roster 
 {
-
     private class StringComparer : IComparer<string>
     {
         int IComparer<string>.Compare(string x, string y)
@@ -12,6 +11,7 @@ public class Roster
         }
     }
 
+    // Dictionary<Grade, List<Students>>
     public Dictionary<int, List<string>> _roster {get; private set;}
 
     public List<string> this[int index] 
@@ -42,13 +42,14 @@ public class Roster
             _roster.Add(grade, new List<string>());
         
         _roster[grade].Add(name);
+        _roster[grade].Sort();
     }
 }
 
 public class School 
 {
 
-    public Roster Roster {get; private set;}
+    public Roster Roster { get; private set;}
 
     public School()
     {

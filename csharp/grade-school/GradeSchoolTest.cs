@@ -45,7 +45,7 @@ public class GradeSchoolTest
         Assert.That(school.Roster[7], Is.EqualTo(new List<string> { "Logan" }));
     }
 
-    [Ignore("Remove to run test")]
+
     [Test]
     public void Grade_returns_the_students_in_that_grade_in_alphabetical_order()
     {
@@ -56,14 +56,14 @@ public class GradeSchoolTest
         Assert.That(school.Grade(5), Is.EqualTo(expected));
     }
 
-    [Ignore("Remove to run test")]
+
     [Test]
     public void Grade_returns_an_empty_list_if_there_are_no_students_in_that_grade()
     {
         Assert.That(school.Grade(1), Is.EqualTo(new List<string>()));
     }
 
-    [Ignore("Remove to run test")]
+
     [Test]
     public void Student_names_in_each_grade_in_roster_are_sorted()
     {
