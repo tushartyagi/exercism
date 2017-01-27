@@ -15,10 +15,7 @@ public class Pangram
         foreach (char c in input) 
         {
             var lower = char.ToLower(c);
-            if (_alphabets.Contains(lower))
-            {
-                set.Add(lower);
-            }
+            set.Add(lower);            
         }
         if (set.Count == 26) return true;
         else return false;

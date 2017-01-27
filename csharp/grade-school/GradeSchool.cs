@@ -25,8 +25,6 @@ public class Roster
         }
     }
 
-     
-
     public int Count { 
         get { return _roster.Count; }
     }
